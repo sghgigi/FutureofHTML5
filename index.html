@@ -1,0 +1,956 @@
+﻿<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link href = 'css/print/pdf.css'>
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<style>
+		@keyframes mymove {
+			0% {
+				padding: 0;
+			}
+			50% {
+				padding: 0 20px;
+				color: white;
+				transform:translate(0px, 0px)
+								  rotateZ(180Deg);
+
+				background-color: rgba(255,0,0,0.5);
+			}
+			100% {
+				padding: 0 100px;
+				background-color:rgba(255,0,0,0.9);
+			}	
+		}
+		@-webkit-keyframes mymove {
+			0% {
+				padding: 0;
+			}
+			50% {
+				padding: 0 20px;
+				color: white;
+				-webkit-transform:translate(0px, 0px)
+								  rotateZ(180Deg);
+								  
+				background-color: rgba(255,0,0,0.5);
+			}
+			100% {
+				padding: 0 100px;
+				background-color:rgba(255,0,0,0.9);
+			}	
+		}
+
+		//
+		circle.myGreen {
+		stroke: #006600;
+		fill:#00cc00;
+		}
+		cicle.myRed {
+		stroke: #660000;
+		fill: #cc0000;
+		}
+		div #box
+		{
+		width:300px;
+		height:300px;
+		left:40%;
+		background:rgba(255,0,0,0);
+		position:relative;
+		animation:mymove 5s infinite;
+		-webkit-animation:mymove 5s infinite;
+		}
+		</style>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+
+
+		</script>
+
+		<script type="text/javascript">
+		function localStore()
+		{
+		var text =
+		document.getElementById
+		("Data1").value;
+		localStorage.setItem("Data1", text);
+		}
+		function localGet()
+		{
+		document.getElementById("Data1").value =
+		localStorage.getItem("Data1");
+		}
+		function localClear()
+		{
+		localStorage.removeItem("Data1");
+		document.getElementById("Data1").value =
+		"";
+		}
+</script>
+
+		
+		<script>
+		$(function() {
+
+			var edit = document.getElementById('edit');
+
+			$(edit).blur(function() {
+				localStorage.setItem('todoData', this.innerHTML);
+			});
+
+			if ( localStorage.getItem('todoData') ) {
+				edit.innerHTML = localStorage.getItem('todoData');
+			}
+		});
+		</script>		
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" >
+				<section data-background="jpg/05.jpg">
+					<h1>HTML5</h1>
+					<h3>HTML5 Presentation</h3>
+					<p>
+						<small>by Gonghe Shi</small>
+					</p>
+				</section>
+
+				<section data-background="jpg/05.jpg">
+					<h2>What is HTML5?</h2>
+					<p>
+						HTML5 is the 5th revision of the HTML standard as proposed by Hypertext Application Technology Working group and adopted by W3C.
+					</p>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				
+					<section data-background="jpg/05.jpg">
+						<h2>HTML stands for Hypertext Markup Language</h2>
+						<ul>
+						<li>Hypertext: <br/>– Text that you click to jump from document to document. This is a reference to the ability of Web pages to link to one another.</li>
+						<li>Markup: <br/>– Tags that apply layout and formatting conventions to plain text. Literally, the plain text is “marked up” with the tags</li>
+						<li>Language: <br/>– A reference to the fact that HTML is considered a programming language.</li>
+					</ul>
+					</section>
+
+				<section data-background="jpg/05.jpg">
+				<!-- Example of nested vertical slides -->
+				<!-- 123 -->
+					<section>
+						<h2>History of HTML</h2>
+						<ul>
+						<li>Before HTML5 <br/></li>
+						<li>History of HTML5 <br/></li>
+						</ul>
+					<footer>
+					<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+					</section>
+					
+					<section>
+						<h2>Before HTML5</h2>
+						<ul>
+						<li>1991. HTML<br/></li>
+						<li>1994. HTML2 <br/></li>
+						<li>1996. CSS1 + Javascript<br/></li>
+						<li>1997. HTML4<br/></li>
+					</ul>
+					<footer>
+					<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+					</section>
+					<section>
+						<h2>History of HTML5 - 1</h2>
+						<ul>
+						<li>2004. WHATWG was founded, with members from APPLE, the Mozilla Foundation, and Opera Software, sets out to develop HTML5.<br/></li>
+						<li>2006 Oct. W3C decides to stop working on XHTML and instead begins collaborating with WHATWG to envolve HTML as a technology.<br/></li>
+						<li>2008. First version of HTML5 is published.<br/></li>
+						<li>2008. Firefox 3 becomes HTML5 compatible.<br/></li>
+						<li>2010 Jan. Youtube offers HTML5 video player.<br/></li>
+						<li>2010 April. Steve Jobs "trashes" Flash in an open letter.<br/></li>
+						<li>2010 May. Scribd documents switch to HTML5<br/></li>
+						<li>2010 Dec. Chrome opens its web store in HTML5. Making non-Apple web apps easy to buy on tablets.<br/></li>
+					</ul>
+					<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="116" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+					</section>
+					<section>
+						<h2>History of HTML5 - 2</h2>
+						<ul style="font-size:70%">
+						<li>2011 March. Disney buys HTML5 gaming start-up.<br/></li>
+						<li>2011 July. Pandora begins moving to HTML5.<br/></li>
+						<li>2011 Aug. Amazon creates a new web-based HTML5 version of the Kindle eBook reader app.<br/></li>
+						<li>2011 Aug. Twitter rolls out new HTML5 version for iPad.<br/></li>
+						<li>2011 Sept. 34% of Alexa's Top-100 trafficked websites are using HTML5.<br/></li>
+						<li>2011 Nov. Adobe stops making Flash for mobile devices.<br/></li>
+						<li>2012 April. Flickr gets a new HTML5 uploader(expedites uploading large files).<br/></li>
+						<li>2012 June. LinkedIn has hadd mobile apps since 2008 but in 2012 sawt he launch of its 95% HTML5 native iPad app. The app has been praised for its clean, modern design.<br/></li>
+						<li>2012 June Wix.com:  +1,000,000 HTML5 websites created by users.<br/></li>
+					</ul>
+						
+					</section>
+				</section>
+
+
+				<section data-background="jpg/05.jpg">
+				<!-- Example of nested vertical slides -->
+				<!-- 123 -->
+					<section>
+					<h2>New features in HTML5</h2>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="116" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+					</section>
+					
+					<section>
+						<h2>New Doctype</h2>
+						<p>Still using that pesky, impossible-to-memorize XHTML doctype ?</p>
+						<pre><code>
+1 &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+2 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+					</code></pre>
+					<p>If so, why? Switch to the new HTML5 doctype</p>
+					<pre><code>
+1 &lt;!DOCTYPE html>
+					</code></pre>
+					<p>In fact, it isn't even really necessary for HTML5. It's used for current, and older browsers that require a specified doctype. Browsers that do not understand this doctype will simply render the contained markup in standards mode.</p>
+					<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+					</section>
+
+					<section>
+						<h3>The Semantic <code>Header</code> and <code>Footer</code></h3>
+					<p>
+					Gone are the days of:</p>
+					<pre><code>&lt;div id="header"&gt;
+					...
+					&lt;/div&gt;
+
+					&lt;div id="footer"&gt;
+					...
+					&lt;/div&gt;</code></pre>
+					<p style="font-size:60%;">Divs, by nature, have no semantic structure -- even after an <code>id</code> is applied. Now, with HTML5, we have access to the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> elements. The mark-up above can now be replaced with:</p>
+					<pre><code>&lt;header&gt;
+						...
+					&lt;/header&gt;
+
+					&lt;footer&gt;
+					...
+					&lt;/footer&gt;</code></pre>
+					<blockquote><p style="font-size:60%;">It's fully appropriate to have multiple <code>header</code>s and <code>footer</code>s in your projects. </p>
+					</blockquote>
+					<p style="font-size:60%;">Try not to confuse these elements with the "header" and "footer" of your website. They simply refer to their container. As such, it makes sense to place, for example, meta information at the bottom of a blog post within the <code>footer</code> element. The same holds true for the <code>header</code>. </p>
+
+					</section>
+
+					<section>
+						<h2>To Quote or Not to Quote</h2>
+						
+						<ul>
+							<li>With Quotation:</li> 
+							<li class="fragment"><pre><code>&lt;p style="font-size:70%; color:yellow;">Hello~&lt;/p></code></pre></li>
+							<li class="fragment">Result: <p style="font-size:70%; color:yellow;"> Hello~</p></li>
+							<li>Without Quotation:</li> 
+							<li class="fragment"><pre><code>&lt;p style=font-size:70%;color:yellow;>Hello~</code></pre></li>
+							<li class="fragment">Result: <p style=font-size:70%;color:yellow;>Hello~</li>
+						</ul>
+						<p class="fragment">They are the same! HTML5 is not XHTML. You don't have to wrap your attributes in quotation marks if you don't want to. You don't have to close your elements. There's nothing wrong with doing so, if it makes you feel more comfortable.</p>
+					<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="116" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+					</section>
+
+					<section>
+					<h2>HTML 5 Geolocation Demo</h2>
+      				<p id="geodemo">Click the button to get your position:</p>
+      				<button onclick="getLocation()">Locate me</button>
+      				<div style="left:20%;" id="mapholder"></div>
+						
+					</section>
+
+					<section>
+					<h2>Local storage and Session storage</h2>
+					<br>
+					<table style="padding: 75px;">
+					<tr><td>Local Storage:</td><td>Data <input id="Data1" type="text">
+					<input type="button" value="Store"
+					onclick="localStore();">
+					<input type="button" value="Get"
+					onclick="localGet();">
+					<input type="button" value="Clear"
+					onclick="localClear();"></td></tr>
+					<tr><td>Session Storage:</td><td>Data <input id="Data" type="text">
+      				<input type="button" value="Store" onclick="sessionStore();">
+      				<input type="button" value="Get" onclick="sessionGet();">
+      				<input type="button" value="Clear" onclick="sessionClear();"></td></tr>
+      				</table>
+					</section>
+					<section>
+						<h2>Make your Content Editable</h2>
+						<h3> To-Do List </h3>
+     					<ol contenteditable="true">
+        				<li>Buy a Lamborghini</li>
+        				<li>Buy a beach mansion</li>
+        				<li>Win the lottery</li>
+     					</ol>
+     					<p><br>It is considered a new attribute because it wasn’t added to the HTML specification until HTML5. But if you put it in an HTML 4 document it will work.</p>
+					</section>
+
+					<section>
+						<h2>Make your Content Editable - take advantage of local storage</h2>
+						<h3> To-Do List </h3>
+						<ol id="edit" contenteditable="true">
+						<li>Buy a Lamborghini</li>
+        				<li>Buy a beach mansion</li>
+        				<li>Win the lottery</li>
+     					</ol>
+     					
+     						
+					</section>
+				</section>
+
+
+				
+
+				<section data-background="jpg/05.jpg">
+					<h2>New Form Element</h2>
+
+					<ol style="font-size:60%;">
+						<li>&lt;input type="text" required =""/><br /><input type="text" required =""/></li>
+						<li>&lt;input type="email" value="some@email.com" /><br /><input type="email" value="some@email.com" /></li>
+						<li>&lt;input type="date" min="2014-08-11" max="2024-08-11" value="2014-08-11"/><br /><input type="date" min="2014-08-11" max="2024-08-11" value="2014-08-11"/></li>
+						<li>&lt;input type="range" min="0" max="50" value="10"/><br /><input type="range" min="0" max="50" value="10"/></li>
+						<li>&lt;input type="tel" placeholder="(416) 123-4567" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" /><br /><input type="tel" placeholder="(416) 123-4567" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" /></li>
+						<li>&lt;input type="color" placeholder="e.g. #bbbbbb"/><br /><input type="color" placeholder="e.g. #bbbbbb"/></li>
+						<li>&lt;input type="number" step="1" min="-5" max="10" value="0"/><br /><input type="number" step="1" min="-5" max="10" value="0"/></li>
+						<li>&lt;input results="10" type="search" placeholder="search..."/><br /><input results="10" type="search" placeholder="search..."/></li>
+					</ol>
+				</section>
+				
+
+				<section data-background="jpg/05.jpg">
+					<h2>Audio Support</h2>
+					<pre class="fragment"><code>&lt;audio controls="controls"&gt;
+					&lt;source src="audio/supermario.mp3" /&gt;
+					&lt;p>Your user agent does not support the HTML5 Audio element.&lt;/p>	
+					&lt;/audio&gt;</code></pre>
+					<audio class="fragment" controls="controls">
+    				<source src="audio/supermario.mp3" /> 
+    				<p>Your user agent does not support the HTML5 Audio element.</p>
+					</audio>
+					<pre class="fragment"><code>&lt;audio autoplay="autoplay" controls="controls"&gt;
+					&lt;source src="audio/supermario2.mp3" /&gt;
+					&lt;p>Your user agent does not support the HTML5 Audio element.&lt;/p>		
+					&lt;/audio&gt;</code></pre>
+					<!-- The autoplay part was removed due to the music clip will be played once the page is
+					loaded at the very beginning -->
+					<!-- <audio class="fragment" autoplay="autoplay" controls="controls">
+    				<source src="audio/supermario2.mp3" /> 
+    				<p>Your user agent does not support the HTML5 Audio element.</p>
+					</audio> -->
+				</section>
+
+				<section data-background="jpg/05.jpg">
+					<section>
+					<h2>Video Support - 1</h2>
+					<p>Local video</p>
+					<pre><code>&lt;video controls&gt;
+	&lt;source src="video/html5.ogv" type="video/ogg; codecs=vorbis, theora" /&gt;
+	&lt;source src="video/html5.mp4" type="video/mp4; 'codecs=avc1.42E01E, mp4a.40.2" /&gt;
+	&lt;p&gt; Your browser is old.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+					<video controls>
+					 <source src="video/html5.ogv" type="video/ogg; 'codecs=vorbis, theora" />
+    				<source src="video/html5.mp4" type="video/mp4; 'codecs=avc1.42E01E, mp4a.40.2" />
+    				<p> Your browser is old.</p>
+					</video>
+					</section>
+					<section>
+					<h2>Video Support - 2</h2>
+					<p>Online video</p>
+					<pre><code>&lt;video controls preload&gt;
+	&lt;source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg; codecs=vorbis, theora" /&gt;
+	&lt;source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4; 'codecs=avc1.42E01E, mp4a.40.2" /&gt;
+	&lt;p&gt; Your browser is old.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+					<video controls>
+					 <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg; 'codecs=vorbis, theora" />
+    				<source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4; 'codecs=avc1.42E01E, mp4a.40.2" />
+    				<p> Your browser is old.</p>
+					</video>
+					</section>
+					<section>
+					<h2>Video Support - 3</h2>
+					<p>Video Fragments</p>
+					<pre><code>&lt;video controls preload&gt;
+	&lt;source src="video/html5.ogv#t=15,20" type="video/ogg; codecs=vorbis, theora" /&gt;
+	&lt;source src="video/html5.mp4#t=15,20" type="video/mp4; 'codecs=avc1.42E01E, mp4a.40.2" /&gt;
+	&lt;p&gt; Your browser is old.&lt;/p&gt;
+&lt;/video&gt;</code></pre>
+					<video controls>
+					 <source src="video/html5.ogv#t=15,20" type="video/ogg; 'codecs=vorbis, theora" />
+    				<source src="video/html5.mp4#t=15,20" type="video/mp4; 'codecs=avc1.42E01E, mp4a.40.2" />
+    				<p> Your browser is old.</p>
+					</video>
+					</section>
+				</section>
+
+				<section data-background="jpg/05.jpg">
+					<h2>Canvas</h2>
+					<pre style="width:70%;"><code>&lt;script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+ctx.fillStyle = "#00A308";
+ctx.beginPath();
+ctx.arc(220, 220, 50, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+
+ctx.fillStyle = "#FF1C0A";
+ctx.beginPath();
+ctx.arc(100, 100, 100, 0, Math.PI*2, true);
+ctx.closePath();
+ctx.fill();
+
+ctx.fillStyle = "rgba(255, 255, 0, .5)";
+ctx.beginPath();
+ctx.rect(15, 150, 120, 120);
+ctx.closePath();
+ctx.fill();
+		&lt;/script></code></pre>
+					<canvas id="myCanvas" width="500" height="500">
+					Your browser does not support the HTML5 canvas tag.
+					</canvas>
+				</section>
+
+				<section data-background="jpg/05.jpg">
+					<h2>SVG</h2>
+					<pre><code>&lt;svg width="1000" height="1000">
+					<rect x="10" y="10" height="100" width="100" style="stroke:#ff0000; fill:#0000ff"></rect>
+					<rect x="50" y="50" height="110" width="110" style="stroke:#ff0000; fill:#ccccff" transform="translate(30) rotate(45 50 50)"></rect>
+					<text x="70" y="100" transform="translate(30) rotate(45 50 50)">Hello World</text>
+					<circle class="myGreen" cx="140" cy="40" r="24"/>
+					<circle class="myRed" cx="140" cy="100" r="24"/>
+					<g transform="rotate(300 300 50)">
+					<line x1="310" y1="310" x2="385" y2="310" style="stroke:#006600;"/>
+					<rect x="310" y="320" height="50" width="75" style="stroke:#006600; fill: #006600"/>
+					<text x="310" y="390" style="stroke: #660000; fill: #660000">
+					Text grounded with shapes
+					</text>
+					</g>
+					&lt;/svg></code></pre>
+					<svg width="1000" height="1000">
+					<rect x="10" y="10" height="100" width="100" style="stroke:#ff0000; fill:#0000ff"></rect>
+					<rect x="50" y="50" height="110" width="110" style="stroke:#ff0000; fill:#ccccff" transform="translate(30) rotate(45 50 50)"></rect>
+					<text x="70" y="100" transform="translate(30) rotate(45 50 50)">Hello</text>
+					<circle class="myGreen" cx="140" cy="40" r="24"/>
+					<circle class="myRed" cx="140" cy="100" r="24"/>
+
+					<g transform="rotate(300 300 50)">
+					<line x1="310" y1="310" x2="385" y2="310" style="stroke:#006600;"/>
+					<rect x="310" y="320" height="50" width="75" style="stroke:#006600; fill: #006600"/>
+					<text x="310" y="390" style="stroke: #660000; fill: #660000">
+					World
+					</text>
+					</g>
+					</svg>
+				</section>
+
+				<section data-background="jpg/05.jpg">
+
+				<section>
+					<h2>CSS animation</h2>
+					<br /><br /><br />
+					<div class="fragment" id="box"> Box with animation effect</div>
+				</section>
+
+				<section>
+				<h2>CSS animation - code</h2>
+					<pre><code>
+&lt;style>
+@keyframes mymove {
+0% {
+padding: 0;
+}
+50% {
+padding: 0 20px;
+color: white;
+transform:translate(0px, 0px)
+rotateZ(180Deg);
+
+background-color: rgba(255,0,0,0.5);
+}100% {
+padding: 0 100px;
+background-color:rgba(255,0,0,0.9);
+}	
+}
+@-webkit-keyframes mymove {
+0% {
+padding: 0;
+}
+50% {
+padding: 0 20px;
+color: white;
+-webkit-transform:translate(0px, 0px)
+rotateZ(180Deg);
+								  
+background-color: rgba(255,0,0,0.5);
+}
+100% {
+padding: 0 100px;
+background-color:rgba(255,0,0,0.9);
+}	
+}
+		
+div #box
+{
+width:300px;
+height:300px;
+left:40%;
+background:rgba(255,0,0,0);
+position:relative;
+animation:mymove 5s infinite;
+-webkit-animation:mymove 5s infinite;
+}
+&lt;/style>
+						
+					</code></pre>
+				</section>
+				</section>
+
+				<section data-background="jpg/05.jpg">
+					<h2>Web worker - Bringing Multi-threading to JavaScript</h2>
+					<h3>Easy example:</h3>
+					<p><br>Count numbers: <output id="result"></output></p>
+				<button onclick="startWorker()">Start Worker1</button> 
+				<button onclick="stopWorker()">Stop Worker1</button>
+				<br><br>
+					<p>Count numbers: <output id="result1"></output></p>
+				<button onclick="startWorker1()">Start Worker2</button> 
+				<button onclick="stopWorker1()">Stop Worker2</button>
+				<br><br>
+
+				</section>
+
+				<section data-background="jpg/05.jpg">
+				<section>
+					<h2>Future of HTML5 - 1</h2>
+					<p>Review - History after HTML5 - 1</p>
+					<blockquote style="font-size:75%;">
+						<ul>
+						<li>2004. WHATWG was founded, with members from APPLE, the Mozilla Foundation, and Opera Software, sets out to develop HTML5.<br/></li>
+						<li>2006 Oct. W3C decides to stop working on XHTML and instead begins collaborating with WHATWG to envolve HTML as a technology.<br/></li>
+						<li>2008. First version of HTML5 is published.<br/></li>
+						<li>2008. Firefox 3 becomes HTML5 compatible.<br/></li>
+						<li>2010 Jan. Youtube offers HTML5 video player.<br/></li>
+						<li>2010 April. Steve Jobs "trashes" Flash in an open letter.<br/></li>
+						<li>2010 May. Scribd documents switch to HTML5<br/></li>
+						<li>2010 Dec. Chrome opens its web store in HTML5. Making non-Apple web apps easy to buy on tablets.<br/></li>
+					</ul>
+					</blockquote>
+				</section>
+
+				<section>
+				<h2>Future of HTML5 -2</h2>
+					<p>Review - History after HTML5 - 2</p>
+				<blockquote style="font-size:65%;">
+						<ul>
+						<li>2011 March. Disney buys HTML5 gaming start-up.<br/></li>
+						<li>2011 July. Pandora begins moving to HTML5.<br/></li>
+						<li>2011 Aug. Amazon creates a new web-based HTML5 version of the Kindle eBook reader app.<br/></li>
+						<li>2011 Aug. Twitter rolls out new HTML5 version for iPad.<br/></li>
+						<li>2011 Sept. 34% of Alexa's Top-100 trafficked websites are using HTML5.<br/></li>
+						<li>2011 Nov. Adobe stops making Flash for mobile devices.<br/></li>
+						<li>2012 April. Flickr gets a new HTML5 uploader(expedites uploading large files).<br/></li>
+						<li>2012 June. LinkedIn has hadd mobile apps since 2008 but in 2012 sawt he launch of its 95% HTML5 native iPad app. The app has been praised for its clean, modern design.<br/></li>
+						<li>2012 June Wix.com:  +1,000,000 HTML5 websites created by users.<br/></li>
+					</ul>
+					</blockquote>
+				</section>
+				<section>
+					<h2>Future of HTML5 - 3</h2>
+					<p>Several exciting features that may appear in browsers in the upcoming future</p>
+					<footer>
+					<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+				</section>
+
+				<section>
+				<h2>Future of HTML5 - 4</h2>
+				<p>WebGL - HTML in Three Dimensions</p>
+				<img src="jpg/3d.jpg">
+				<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+				</section>
+
+				<section>
+				<h2>Future of HTML5 - 5</h2>
+				<p>Audio Data API</p>
+				<ul>
+						<li>Enable music creation in HTML5 applications<br/></li>
+						<li>Something cannot be done with the <code>&lt;audio></code> element.<br/></li>
+						<li>access to audio data</li>
+						</ul>
+				<footer>
+					<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>		
+				</section>
+
+				<section>
+				<h2>Future of HTML5 - 6</h2>
+				<p>Mobile devices support</p>
+				<ul>
+						<li>Orientation<br/></li>
+						<li>Gestures</li>
+						<li>Touches</li>
+						</ul>
+						<footer>
+					<a href="#" class="image navigate-down">
+							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>	
+				</section>
+
+				<section>
+				<h2>Future of HTML5 - 7</h2>
+				<p>Mobile devices support - Orientation</p>
+				<p>The orientation event can be
+added to the document body:<pre><code>
+&lt;body onorientationchange="rotateDisplay();"></code></pre></p>
+				<table style="font-size:70%;">
+				<tr style="color:red;"><td>Orientation Value</td><td>Meaning</td></tr>
+				<tr><td>0</td><td>The page is being held in the same orientation as its original load.</td></tr>
+				<tr><td>-90</td><td>The device has been rotated 90 degrees clockwise (right) since the original load.</td></tr>
+				<tr><td>180</td><td>The device has been rotated upside-down since the original page load.</td></tr>
+				<tr><td>90</td><td>The device has been rotated 90 degrees counter-clockwise (left) since the page was
+originally loaded.</td></tr>
+				</table>
+				</section>
+
+				<section>
+				<h2>Future of HTML5 - 8</h2>
+				<p>Mobile devices support - Gestures</p>
+				<table style="font-size:60%;">
+				<tr style="color:red;"><td>Event Handler</td><td>Description</td></tr>
+				<tr><td>ongesturestart</td><td>A user has placed multiple fingers on the screen and has begun a movement.</td></tr>
+				<tr><td>ongesturechange</td><td>The user is in the process of moving multiple fingers in a scale or rotation.</td></tr>
+				<tr><td>ongestureend</td><td>The user has completed the scale or rotation by removing fingers.</td></tr>
+				</table>
+				<pre><code style="font-size:80%;">function gestureChange(event) {
+// Retrieve the amount of change in scale caused by the user gesture
+// Consider a value of 1.0 to represent the original size, while smaller
+// numbers represent a zoom in and larger numbers represent a zoom
+// out, based on the ratio of the scale value
+var scale = event.scale;
+ For syntax highlighting -->
+// Retrieve the amount of change in rotation caused by the user gesture
+// The rotation value is in degrees from 0 to 360, where positive values
+// indicate a rotation clockwise and negative values indicate a counter-
+// clockwise rotation
+var rotation = event.rotation;
+
+// Update the display based on the rotation.
+}
+// register our gesture change listener on a document node
+node.addEventListener("gesturechange", gestureChange, false);
+					
+				</code></pre>
+
+				</section>
+
+				<section>
+				<h2 >Future of HTML5 - 9</h2>
+				<p>Mobile devices support - Touches</p>
+				<table style="font-size:80%;">
+				<tr style="color:red;"><td>Event Handler</td><td>Description</td></tr>
+				<tr><td>ontouchstart</td><td>A finger has been placed on the surface of the touch device. Multitouch events will
+occur as more fingers are placed on the device.</td></tr>
+				<tr><td>ontouchmove</td><td>One or more of the fingers on the device has moved its location in a drag operation.</td></tr>
+				<tr><td>ontouchend</td><td>One or more fingers have been lifted away from the device screen.</td></tr>
+				<tr><td>ontouchcancel</td><td>An unexpected interruption has stopped the touch operations.</td></tr>
+				</table>
+				<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>
+
+				</section>
+
+				<section>
+				<h2 >Future of HTML5 - 10</h2>
+				<p>Mobile devices support - Touches - 2</p>
+				<P>Touch API</P>
+				<pre><code style="font-size:80%;">function touchMove(event) {
+// the touches list contains an entry for every finger currently touching the screen
+var touches = event.touches;
+
+// the changedTouches list contains only those finger touches modified at this
+// moment in time, either by being added, removed, or repositioned
+varchangedTouches = event.changedTouches;
+
+// targetTouches contains only those touches which are placed in the node
+// where this listener is registered
+vartargetTouches = event.targetTouches;
+
+// once you have the touches you'd like to track, you can reference
+// most attributes you would normally get from other event objects
+varfirstTouch = touches[0];
+varfirstTouchX = firstTouch.pageX;
+varfirstTouchY = firstTouch.pageY;
+}
+
+// register one of the touch listeners for our example
+node.addEventListener("touchmove", touchMove, false);	
+				</code></pre>
+				<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>	
+				</section>
+
+				<section>
+				<h2 >Future of HTML5 - 11</h2>
+				<p>The Flash vs HTML5</p>
+				<ul>
+					<li>Apple refused to adopt technology of FLash<br/></li>
+					<li>Many Android devices don’t support Flash, either</li>
+					<li>nearly half of the U.S. population has a mobile phone with Internet access, and one in five page views on the Web happen on a mobile device</li>
+					<li>As a consequence, Adobe decided to stop development of the mobile browser version of Flash.</li>
+				</ul>
+				<footer>
+					<a href="#" class="image navigate-down">
+							<img width="89" height="119" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+						</a></footer>	
+				</section>
+
+				<section>
+				<h2 >Future of HTML5 - 12</h2>
+				<blockquote>The growth of mobile engagement; the rise of Interactive Video for entertainment, advertising and shopping; and HTML5’s open structure all combine to create the future of an HTML5-based web.</blockquote>
+				</section>
+					
+				</section>
+
+				<section data-background="jpg/05.jpg">
+					<h1>THE END</h1>
+					<h3>Thank you all for watching.</h3>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script>
+		
+		//Canvas
+		<script>
+		var c = document.getElementById("myCanvas");
+		var ctx = c.getContext("2d");
+
+		ctx.fillStyle = "#00A308";
+		ctx.beginPath();
+		ctx.arc(220, 220, 50, 0, Math.PI*2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		ctx.fillStyle = "#FF1C0A";
+		ctx.beginPath();
+		ctx.arc(100, 100, 100, 0, Math.PI*2, true);
+		ctx.closePath();
+		ctx.fill();
+
+		ctx.fillStyle = "rgba(255, 255, 0, .5)";
+		ctx.beginPath();
+		ctx.rect(15, 150, 120, 120);
+		ctx.closePath();
+		ctx.fill();
+		</script>
+
+
+
+        //Web worker
+		<script>
+		var w;
+
+		function startWorker() {
+   	    if(typeof(Worker) !== "undefined") {
+        
+            w = new Worker("js/demo_workers.js");
+        
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    	} else {
+        document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+  		}
+		}
+		function stopWorker() { 
+  	    w.terminate();
+		}
+		</script>
+
+		//Web worker2
+		<script>
+		var w1;
+		function startWorker1() {
+   	    if(typeof(Worker) !== "undefined") {
+            w1 = new Worker("js/demo_workers.js");
+        
+        w1.onmessage = function(event) {
+            document.getElementById("result1").innerHTML = event.data;
+        };
+    	} else {
+        document.getElementById("result1").innerHTML = "Sorry! No Web Worker support.";
+  		}
+		}
+
+		function stopWorker1() { 
+  	    w1.terminate();
+		}
+		</script>
+		
+		//sessionstorage
+		<script type="text/javascript">
+         function sessionStore()
+         {
+         	var text = document.getElementById("Data").value;
+         	sessionStorage.setItem("Data", text);
+         }
+         function sessionGet()
+         {
+         	document.getElementById("Data").value = sessionStorage.getItem("Data");
+         }
+         function sessionClear()
+         {
+         sessionStorage.removeItem("Data");
+         document.getElementById("Data").value = "";
+         }
+      </script>
+
+	  //Geolocation
+      <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+      <script>
+         var x = document.getElementById("geodemo");
+         function getLocation() {
+             if (navigator.geolocation) {
+                 navigator.geolocation.getCurrentPosition(showPosition,showError);
+             } else { 
+                 x.innerHTML = "Geolocation is not supported by this browser.";}
+         }
+         
+         function showPosition(position) {
+             lat = position.coords.latitude;
+             lon = position.coords.longitude;
+             latlon = new google.maps.LatLng(lat, lon)
+             mapholder = document.getElementById('mapholder')
+             mapholder.style.height='250px';
+             mapholder.style.width='500px';
+         
+             var myOptions={
+             center:latlon,zoom:15,
+             mapTypeId:google.maps.MapTypeId.ROADMAP,
+             mapTypeControl:false,
+             navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL}
+             }
+             
+             var map = new google.maps.Map(document.getElementById("mapholder"),myOptions);
+             var marker = new google.maps.Marker({position:latlon,map:map,title:"You are here!"});
+         }
+         
+         function showError(error) {
+             switch(error.code) {
+                 case error.PERMISSION_DENIED:
+                     x.innerHTML = "User denied the request for Geolocation."
+                     break;
+                 case error.POSITION_UNAVAILABLE:
+                     x.innerHTML = "Location information is unavailable."
+                     break;
+                 case error.TIMEOUT:
+                     x.innerHTML = "The request to get user location timed out."
+                     break;
+                 case error.UNKNOWN_ERROR:
+                     x.innerHTML = "An unknown error occurred."
+                     break;
+             }
+         }
+      </script>
+
+	</body>
+</html>
